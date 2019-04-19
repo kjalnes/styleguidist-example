@@ -1,4 +1,4 @@
-import Modal from 'react-modal';
+import ModalTemplate from 'react-modal';
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -14,7 +14,14 @@ const customStyles = {
 };
 
 
-class UpcityModal extends React.Component {
+export default class Modal extends React.Component {
+	static propTypes = {
+  	isOpen: PropTypes.bool
+	}
+  
+  static defaultProps = {
+    isOpen: false
+  }
   constructor() {
     super();
 
@@ -44,7 +51,7 @@ class UpcityModal extends React.Component {
     return (
       <div>
         <button onClick={this.openModal}>Open Modal</button>
-        <Modal
+        <ModalTemplate
           isOpen={this.state.modalIsOpen}
           onAfterOpen={this.afterOpenModal}
           onRequestClose={this.closeModal}
@@ -62,7 +69,7 @@ class UpcityModal extends React.Component {
             <button>inside</button>
             <button>the modal</button>
           </form>
-        </Modal>
+        </ModalTemplate>
       </div>
     );
   }

@@ -1,14 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-/**
- * General component description in JSDoc format. Markdown is *supported*.
- */
 export default class Button extends React.Component {
   static propTypes = {
-    /** Description of prop "foo". */
     foo: PropTypes.number,
-    /** Description of prop "baz". */
     baz: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
   }
   
